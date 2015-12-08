@@ -42,40 +42,42 @@ MSc Machine Learning\\
 
 \maketitle
 
-\begin{abstract}
-
-\end{abstract}
-
 \section{Exercise 1: Least Square Regression: effect of the training set size}
+We generated a noisy random data set, containing 600 samples, as $y_i = x_i'w + n_i$, where each $x_i$ and $n_i$ are drawn from the standard normal distribution. We splitted the data into a training set of size 100 a test set of size 500. We compute the mean squared error on both the training and test sets. Figure \ref{fig:lsr} shows examples of different training sets and estimated regression $w$.
 
-  \begin{figure}[H]
+ \begin{figure}[H]
 \center
 \begin{tabular}{ccc}
 \includegraphics[width=0.3\textwidth]{10points}&\includegraphics[width=0.3\textwidth]{100points}&\includegraphics[width=0.3\textwidth]{500points}
 \end{tabular}
-\caption{ (a) training set of 10 points(b) training set of 100 points (c) the entire data set}
-\end{figure}
+\caption{ (a) training set of 10 points (b) training set of 100 points (c) the entire data set}
+\label {fig:lsr}
+\end{figure} 
 
-
+Figure \ref{fig:resultMatrix1} illustrates the ''2 x 2'' table of averages mean square error for both training and test sets, on both 10 and 100 element-size training set.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{resultsMatrix}
 \end{center}
-\caption{Average error on the training set (first row: 10 training points, second row: 100 training points}
+\caption{Average mean square error for both training and test sets, on both 10 and 100 element-size training set.}
+\label{fig:resultMatrix1}
 \end{figure}
 
 We can observe that increasing the size of training set lets to decrease the average mean error on the test set.
-
+However, it increased the average mean error on train set.
+With increasing the size of training set, the average error on the test and train set became similar.
+The average error on test set is larger than on train set. It is clear, beacause we have seen the train data before and haven't seen the test data.
 \section{Exercise 2: Least Square Regression: effect of dimensionality}
-
+We repeated the task in exercise 1, but with 10-dimensional data sets. Figure \ref{fig:resultMatrix2} illustrates the ''2 x 2'' table of averages mean square error for both training and test sets, on both 10 and 100 element-size training set.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{resultsMatrix2}
 \end{center}
-\caption{Average error on the training set (first row: 10 training points, second row: 100 training points}
+\caption{Average mean square error for 10-dimensional data for both training and test sets, on both 10 and 100 element-size training set.}
+\label{fig:resultMatrix2}
 \end{figure}
 
-Interpretation: 
+For 10-sample training set, we obain the average mean square error $0$ for train set and $2505.1$ for test set. We have 10-dimensional data and 10 samples, so we can accurately predict $y_i$ without any errors. However, the prediction is overfitted to the training data and we have a large error for test set. Icreasing number of samples to 100 helps to decrease average error on test set. Average error for train set is bigger than for 10 samples, but our goal is to decrase test error.
 
 \section{Ridge regression}
 
