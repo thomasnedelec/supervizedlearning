@@ -119,12 +119,16 @@ Thus $\gamma l Id +X^{T}X$ is definite positve.
 
 First, the graph shows that if gamma is too high, the training error and test error increase dramatically. It is intuitive because when gamma is high the algorithm is far more likely to minimize $||w||$  rather than the training error.
 
-\\We have an optimal point corrisponding to inflection point of the curve. When we average the training error on 200 run, we can observe that now the test errror and the training error are now almost identical.
+
+\\We have an optimal point corresponding to inflection point of the curve in order to select $\gamma$. Nevertheless, the training set error is not a sufficiently good guidance to select the regularization parameter because the charts are quite different. 
+
+\\However, when we average the training error on 200 runs, we can observe that now the test error and the training error are now almost identical.
 
 \\A way to select the optimal $\gamma$ would be to plot the error on the training set averaged on a certain number of runs of the algorithm and select the optimal $\gamma$ on this curve. 
 
 
 \section{Tuning the regularization parameter using a validation set}
+
 
 
 \end{document}

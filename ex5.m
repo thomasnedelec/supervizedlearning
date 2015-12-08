@@ -34,8 +34,16 @@ for seed = 1:nLoops
 
         %implementation of cross-validation
         
+        %separation in a smaller training set and a development set
         
-        wTrained=(transpose(X)*X+gamma*nTrainPoints*eye(dimension))\(transpose(X)*Y);
+        percentage=0.8;
+        smallerTrainX = X(1:percentage*nTrainPoints,:);
+        smallerTrainY = Y(1:percentage*nTrainPoints,:);
+        
+        validationX= X(percentage*nTrainPoints+1:nTrainPoints,:);
+        validationY= Y(percentage*nTrainPoints+1:nTrainPoints,:);
+        
+        wTrained=(transpose(smallerTrainX)*smallerTrainX+gamma*percentage*nTrainPoints*eye(dimension))\(transpose(X)*Y);
     
         MSETrain(1,i) = computeMSE(wTrained,trainX,trainY);
         MSETest(1,i) = computeMSE(wTrained,testX,testY);

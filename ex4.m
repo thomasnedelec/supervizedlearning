@@ -1,10 +1,10 @@
 clear all;
 clc;
 close all;
-toPlot = 0;
+toPlot = 1;
 nbValueGamma=10;
 vectorGamma=zeros(1,nbValueGamma);
-nLoops = 200;
+nLoops = 1;
 MSETrain=zeros(1,nbValueGamma);
 MSETest=zeros(1,nbValueGamma);
 averageTestError = zeros(1,nbValueGamma);
@@ -32,7 +32,7 @@ for seed = 1:nLoops
         testX = X(100:nData,:);
         testY = Y(100:nData,:);
     
-        wTrained=(transpose(X)*X+gamma*nTrainPoints*eye(dimension))\(transpose(X)*Y);
+        wTrained=(transpose(trainX)*trainX+gamma*nTrainPoints*eye(dimension))\(transpose(trainX)*trainY);
     
         MSETrain(1,i) = computeMSE(wTrained,trainX,trainY);
         MSETest(1,i) = computeMSE(wTrained,testX,testY);
@@ -57,8 +57,8 @@ end;
 averageTestError=averageTestError./nLoops;
 averageTrainError=averageTrainError./nLoops;
 figure(2)
-semilogx(vectorGamma,averageTestError, '-b')
+semilogx(vectorGamma,averageTrainError, '-b')
 hold on;
-semilogx(vectorGamma, averageTrainError, '-g')
+semilogx(vectorGamma, averageTestError, '-g')
 legend('Training set averaged error on 200 samples','Test set averaged error on 200 samples');
 title('Evolution of the averaged training error and averaged test error in function of gamma');
