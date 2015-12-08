@@ -44,7 +44,7 @@ for seed = 1:nLoops
             validationX = xSetsValidation(:,fold);
             validationY = ySetsValidation(:,fold);
             percentage = (k-1) / k;
-            wTrained=(transpose(smallerTrainX)*smallerTrainX+gamma*percentage*nTrainPoints*eye(dimension))\(transpose(X)*Y);
+            wTrained=(transpose(smallerTrainX)*smallerTrainX+gamma*percentage*nTrainPoints*eye(dimension))\(transpose(smallerTrainX)*smallerTrainY);
             mseTrainAverage = mseTrainAverage + computeMSE(wTrained,trainX,trainY);
             mseTestAverage = mseTestAverage + computeMSE(wTrained,testX,testY);
         end
