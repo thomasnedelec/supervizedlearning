@@ -1,1 +1,5 @@
-\BOOKMARK [1][-]{section.1}{Tutorial on Mixtures of Gaussians}{}% 1
+\BOOKMARK [1][-]{section.1}{Exercise 1: Least Square Regression: effect of the training set size}{}% 1
+\BOOKMARK [1][-]{section.2}{Exercise 2: Least Square Regression: effect of dimensionality}{}% 2
+\BOOKMARK [1][-]{section.3}{Ridge regression}{}% 3
+\BOOKMARK [1][-]{section.4}{Effect of the regularisation parameter}{}% 4
+\BOOKMARK [1][-]{section.5}{Tuning the regularization parameter using a validation set}{}% 5

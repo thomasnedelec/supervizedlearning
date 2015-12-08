@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.1)  3 DEC 2015 22:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.1)  8 DEC 2015 09:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -668,36 +668,171 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 45.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 52.
- [1
+<10points.png, id=20, 444.66125pt x 359.3425pt>
+File: 10points.png Graphic file (type png)
+ <use 10points.png>
+Package pdftex.def Info: 10points.png used on input line 55.
+(pdftex.def)             Requested size: 129.00269pt x 104.25052pt.
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 52.
+<100points.png, id=22, 442.65375pt x 358.33875pt>
+File: 100points.png Graphic file (type png)
+ <use 100points.png>
+Package pdftex.def Info: 100points.png used on input line 55.
+(pdftex.def)             Requested size: 129.00269pt x 104.42955pt.
+
+<500points.png, id=23, 445.665pt x 361.35pt>
+File: 500points.png Graphic file (type png)
+ <use 500points.png>
+Package pdftex.def Info: 500points.png used on input line 55.
+(pdftex.def)             Requested size: 129.00269pt x 104.59583pt.
+
+<resultsMatrix.png, id=24, 177.66376pt x 82.3075pt>
+File: resultsMatrix.png Graphic file (type png)
+ <use resultsMatrix.png>
+Package pdftex.def Info: resultsMatrix.png used on input line 63.
+(pdftex.def)             Requested size: 171.99922pt x 79.68619pt.
+
+[1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}pdfTeX wa
+rning (ext4): destination with the same identifier (name{figure.1}) has been al
+ready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.70 ...uare Regression: effect of dimensionality}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.2}) has been already used, duplicat
+e ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.70 ...uare Regression: effect of dimensionality}
+                                                   <./10points.png> <./100point
+s.png> <./500points.png> <./resultsMatrix.png>]
+<resultsMatrix2.png, id=40, 192.72pt x 120.45pt>
+File: resultsMatrix2.png Graphic file (type png)
+ <use resultsMatrix2.png>
+Package pdftex.def Info: resultsMatrix2.png used on input line 74.
+(pdftex.def)             Requested size: 171.99922pt x 107.49973pt.
+
+./assignment1.tex:101: Missing $ inserted.
+<inserted text> 
+                $
+l.101 \\\gamma
+               l Id +X^{T}X is symetric.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./assignment1.tex:102: Missing $ inserted.
+<inserted text> 
+                $
+l.102 \\ We consider $u \in
+                            \mathbb{R}^{d}$:
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no d in font msbm7!
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.107 \end{align*}
+                   <./resultsMatrix2.png>]
+<error4.png, id=58, 431.6125pt x 365.365pt>
+File: error4.png Graphic file (type png)
+ <use error4.png>
+Package pdftex.def Info: error4.png used on input line 115.
+(pdftex.def)             Requested size: 215.0023pt x 182.00189pt.
+
+<averagederror4.png, id=59, 469.755pt x 374.39874pt>
+File: averagederror4.png Graphic file (type png)
+ <use averagederror4.png>
+Package pdftex.def Info: averagederror4.png used on input line 115.
+(pdftex.def)             Requested size: 215.0023pt x 171.35715pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 114--117
+ [] 
+ []
+
+
+./assignment1.tex:122: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 \\W
+         e have an optimal point corrisponding to inflection point of the cu...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./assignment1.tex:124: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 \\A
+          way to select the optimal $\gamma$ would be to plot the error on t...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.130 \end{document}
+                     <./error4.png> <./averagederror4.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
  (./assignment1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 52.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 52.
-Package rerunfilecheck Info: File `assignment1.out' has not changed.
-(rerunfilecheck)             Checksum: E19F6EE4AB8D63D0D8E3F8D0D5484A3A;68.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
+
+Package rerunfilecheck Warning: File `assignment1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `assignment1.out':
+(rerunfilecheck)             Before: EE29D5F56571F1D8EC34C1192C87D798;323
+(rerunfilecheck)             After:  543F109E8C1AC769BE48162F6DC63902;416.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 130.
  ) 
 Here is how much of TeX's memory you used:
- 9173 strings out of 493089
- 132870 string characters out of 6134843
- 231570 words of memory out of 5000000
- 12484 multiletter control sequences out of 15000+600000
- 37164 words of font info for 58 fonts, out of 8000000 for 9000
+ 9235 strings out of 493089
+ 133775 string characters out of 6134843
+ 234571 words of memory out of 5000000
+ 12522 multiletter control sequences out of 15000+600000
+ 49826 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,39p,278b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
-l/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-lm/lmtt10.pfb>
-Output written on assignment1.pdf (1 page, 95987 bytes).
+ 37i,13n,39p,278b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
+cal/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
+15/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/
+enc/dvips/lm/lm-rmtt.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
+msy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on assignment1.pdf (3 pages, 213633 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
