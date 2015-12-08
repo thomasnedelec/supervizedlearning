@@ -5,6 +5,8 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{lmodern}
 \usepackage{titlesec}
 \usepackage{longtable}
@@ -132,6 +134,22 @@ A way to select the optimal $\gamma$ would be to plot the error on the training 
 
 \section{Tuning the regularization parameter using a validation set}
 
+\section{Tuning the regularization parameter using cross valdidation}
+We use 5-fold cross validation to tune the regularization parameter. Figure \ref{fig:ex6} shows cross-validation score on top of the training and test set error for different values $\gamma = \{10^{-6}, 10^{-5}, \dots, 10^3 \}$ of the regularization parameter.
 
-
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ex6_10}
+        \caption{10-sample training set}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ex6_100}
+        \caption{100-sample training set}
+    \end{subfigure}
+    \caption{Evaluation of the mean square error in function of gamma for different number of training examples.}
+    \label{fig:ex6}
+\end{figure}
+ TO DO :
+Interpretation
 \end{document}
