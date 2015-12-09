@@ -12,6 +12,8 @@ for i=1:2
         s = RandStream('mt19937ar','Seed',seed);
         RandStream.setGlobalStream(s);
 
+        
+        X=boston
         %variables
         nData = 600;
         dimension = 1;
