@@ -52,7 +52,8 @@ for j=1:2
             wTrained(:,i)=(transpose(smallerTrainX)*smallerTrainX+gamma*percentage*nTrainPoints*eye(dimension))\(transpose(smallerTrainX)*smallerTrainY);
     
             MSEValidation(j,i) = computeMSE(wTrained(:,i),validationX,validationY);
-            
+            MSETest(j, i) = computeMSE(wTrained(:,i),testX,testY);
+            MSETrain(j,i) = computeMSE(wTrained(:,i),smallerTrainX,smallerTrainY);
             vectorGamma(1,i)=gamma;
             gamma=10*gamma;
             averageValidationError(1,i) = averageValidationError(1,i) + MSEValidation(1,i);
@@ -60,6 +61,7 @@ for j=1:2
         if(toPlot)
             figure
             semilogx(vectorGamma,MSEValidation(j,:), '-b')
+            hold on;
             title('Evolution of the error on the development set in function of gamma');
         end;
         [minimum,index]=min(MSEValidation(j,:));
@@ -73,5 +75,28 @@ indexaverage(1,2)=10^(-6)*10^indexaverage(1,2);
 indexaverage
 resultsMatrix
 MSEValidation;
+
+
+figure()
+semilogx(vectorGamma,MSEValidation(1,:), '-b')
+hold on
+semilogx(vectorGamma,MSETrain(1,:), '-g')
+semilogx(vectorGamma,MSETest(1,:), '-r')
+legend('validation set', 'train set', 'test set')
+title('Evolution of the error for 10-sample train set in function of gamma');
+xlabel('regularization parameter')
+ylabel('MSE')
+
+figure()
+semilogx(vectorGamma,MSEValidation(2,:), '-b')
+hold on
+semilogx(vectorGamma,MSETrain(2,:), '-g')
+semilogx(vectorGamma,MSETest(2,:), '-r')
+legend('validation set', 'train set', 'test set')
+title('Evolution of the error for 100-sample train set in function of gamma');
+xlabel('regularization parameter')
+ylabel('MSE')
+
+
 
 
