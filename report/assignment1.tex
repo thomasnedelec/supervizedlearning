@@ -47,7 +47,7 @@ MSc Machine Learning\\
 \section{Exercise 1: Least Square Regression: effect of the training set size}
 We generated a noisy random data set, containing 600 samples, as $y_i = x_i'w + n_i$, where each $x_i$ and $n_i$ are drawn from the standard normal distribution. We splitted the data into a training set of size 100 a test set of size 500. We compute the mean squared error on both the training and test sets. Figure \ref{fig:lsr} shows examples of different training sets and estimated regression $w$.
 
- \begin{figure}[H]
+ \begin{figure}[h]
 \center
 \begin{tabular}{ccc}
 \includegraphics[width=0.3\textwidth]{10points}&\includegraphics[width=0.3\textwidth]{100points}&\includegraphics[width=0.3\textwidth]{500points}
@@ -57,7 +57,7 @@ We generated a noisy random data set, containing 600 samples, as $y_i = x_i'w + 
 \end{figure} 
 
 Figure \ref{fig:resultMatrix1} illustrates the ''2 x 2'' table of averages mean square error for both training and test sets, on both 10 and 100 element-size training set.
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{resultsMatrix}
 \end{center}
@@ -71,7 +71,7 @@ With increasing the size of training set, the average error on the test and trai
 The average error on test set is larger than on train set. It is clear, beacause we have seen the train data before and haven't seen the test data.
 \section{Exercise 2: Least Square Regression: effect of dimensionality}
 We repeated the task in exercise 1, but with 10-dimensional data sets. Figure \ref{fig:resultMatrix2} illustrates the ''2 x 2'' table of averages mean square error for both training and test sets, on both 10 and 100 element-size training set.
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{resultsMatrix2}
 \end{center}
@@ -114,16 +114,21 @@ Thus $\gamma l Id +X^{T}X$ is definite positve.
 
 \section{Effect of the regularisation parameter}
 
-  \begin{figure}[H]
+First, the graph \ref{fig:ex4_100} shows that if gamma is too high, the training error and test error increase dramatically. It is intuitive because when gamma is high the algorithm is far more likely to minimize $||w||$  rather than the training error.
+
+ \begin{figure}[h]
 \center
-\begin{tabular}{cc}
-\includegraphics[width=0.5\textwidth]{error4}&\includegraphics[width=0.5\textwidth]{averagederror4}
-\end{tabular}
-\caption{ (a) evolution of the training error and test errror for one run (b) evolution of the training error and test error averaged on 200 runs}
+ \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{4_100}
+        \caption{One run.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{4_100_avg}
+        \caption{Averaged on 200 runs.}
+    \end{subfigure}
+    \caption{Evaluation of the training error and test error in function of gamma for 100 training samples.}
+    \label{fig:ex4_100}
 \end{figure}
-
-First, the graph shows that if gamma is too high, the training error and test error increase dramatically. It is intuitive because when gamma is high the algorithm is far more likely to minimize $||w||$  rather than the training error.
-
 
 We have an optimal point corresponding to inflection point of the curve in order to select $\gamma$. Nevertheless, the training set error is not a sufficiently good guidance to select the regularization parameter because the charts are quite different. 
 
@@ -132,12 +137,29 @@ However, when we average the training error on 200 runs, we can observe that now
 A way to select the optimal $\gamma$ would be to plot the error on the training set averaged on a certain number of runs of the algorithm and select the optimal $\gamma$ on this curve. 
 
 
+ \begin{figure}[h]
+\center
+ \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{4_100}
+        \caption{One run.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{4_10_avg}
+        \caption{Averaged on 200 runs.}
+    \end{subfigure}
+    \caption{Evaluation of the training error and test error in function of gamma for 10 training samples.}
+    \label{fig:ex4_10}
+\end{figure}
+
+Figure \ref{fig:ex4_10} shows ..............
+
+
 \section{Tuning the regularization parameter using a validation set}
 
 \section{Tuning the regularization parameter using cross valdidation}
 We use 5-fold cross validation to tune the regularization parameter. Figure \ref{fig:ex6} shows cross-validation score on top of the training and test set error for different values $\gamma = \{10^{-6}, 10^{-5}, \dots, 10^3 \}$ of the regularization parameter.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{ex6_10}

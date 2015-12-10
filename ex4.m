@@ -48,8 +48,8 @@ for seed = 1:nLoops
         semilogx(vectorGamma,MSETrain, '-b')
         hold on;
         semilogx(vectorGamma, MSETest, '-g')
-        legend('Training set averaged error','Test set averaged error');
-        title('Evolution of the training error and test error in function of gamma');
+        legend('train set','test set');
+        title(sprintf('100 training samples \n Evolution of the training and test error in function of gamma'));
         
     end;
     
@@ -60,5 +60,5 @@ figure(2)
 semilogx(vectorGamma,averageTrainError, '-b')
 hold on;
 semilogx(vectorGamma, averageTestError, '-g')
-legend('Training set averaged error on 200 samples','Test set averaged error on 200 samples');
-title('Evolution of the averaged training error and averaged test error in function of gamma');
+legend('train set','test set');
+title(sprintf('100 training samples \n Averaged evolution of the training and test error in function of gamma'));
