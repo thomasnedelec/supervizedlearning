@@ -65,10 +65,10 @@ Figure \ref{fig:resultMatrix1} illustrates the ''2 x 2'' table of averages mean 
 \label{fig:resultMatrix1}
 \end{figure}
 
-We can observe that increasing the size of training set lets to decrease the average mean error on the test set.
+We can observe that increasing the size of training set lets to decrease the average mean error on the test set. It's because, the larger training set prevents us from overfitting our model and give us a better overview of data. 
 However, it increased the average mean error on train set.
-With increasing the size of training set, the average error on the test and train set became similar.
-The average error on test set is larger than on train set. It is clear, beacause we have seen the train data before and haven't seen the test data.
+With increasing the size of training set, the average error on the test and train set became similar. The average error on test set is larger than on train set. It is clear, because we have seen the train data before and haven't seen the test data.
+
 \section{Exercise 2: Least Square Regression: effect of dimensionality}
 We repeated the task in exercise 1, but with 10-dimensional data sets. Figure \ref{fig:resultMatrix2} illustrates the ''2 x 2'' table of averages mean square error for both training and test sets, on both 10 and 100 element-size training set.
 \begin{figure}[h]
@@ -79,7 +79,7 @@ We repeated the task in exercise 1, but with 10-dimensional data sets. Figure \r
 \label{fig:resultMatrix2}
 \end{figure}
 
-For 10-sample training set, we obain the average mean square error $0$ for train set and $2505.1$ for test set. We have 10-dimensional data and 10 samples, so we can accurately predict $y_i$ without any errors. However, the prediction is overfitted to the training data and we have a large error for test set. Icreasing number of samples to 100 helps to decrease average error on test set. Average error for train set is bigger than for 10 samples, but our goal is to decrase test error.
+For 10-sample training set, we obtain the average mean square error $0$ for train set and $2505.1$ for test set. We have 10-dimensional data and 10 samples, so we can accurately predict $y_i$ without any errors. However, the prediction is overfitted to the training data and we have a large error for test set. Increasing number of samples to 100 helps to decrease average error on test set. Average error for train set is bigger than for 10 samples, but our goal is to decrease test error.
 
 \section{Ridge regression}
 
@@ -170,7 +170,7 @@ Figure \ref{fig:ex4_10} shows ..............
 \end{figure}
 
 
-\section{Tuning the regularization parameter using cross valdidation}
+\section{Tuning the regularization parameter using cross validation}
 We use 5-fold cross validation to tune the regularization parameter. Figure \ref{fig:ex6} shows cross-validation score on top of the training and test set error for different values $\gamma = \{10^{-6}, 10^{-5}, \dots, 10^3 \}$ of the regularization parameter.
 
 \begin{figure}[h]
@@ -186,6 +186,56 @@ We use 5-fold cross validation to tune the regularization parameter. Figure \ref
     \caption{Evaluation of the mean square error in function of gamma for different number of training examples.}
     \label{fig:ex6}
 \end{figure}
- TO DO :
-Interpretation
+
+Cross validation error is a good estimation of error for test set for both 10 and 100 samples. 
+
+
+\section{Comparison of  $\gamma$ tuning methods}
+The goal of this exercise is to generate 200 such data as in above exercises and tune the regularization parameter $\gamma$ using three methods. The results of average test error and standard deviation of the errors for 10 sample set-up are presented below:
+
+\begin{enumerate}
+\item By minimizing the training error
+\begin{itemize}
+\item Test set error: $163.9892$
+\item Standard deviation of error: $508.3517$
+\end{itemize}
+\item By minimizing the validation error (80\% / 20 \% split)
+\begin{itemize}
+\item Test set error: $35.5974$
+\item Standard deviation of error: $192.3498$
+\end{itemize}
+\item By minimizing the 5-fold cross validation error
+\begin{itemize}
+\item Test set error: $6.2890$
+\item Standard deviation of error: $10.1677$
+\end{itemize}
+\end{enumerate}
+
+The best results gives tunning regularization by minimizing the 5-fold cross validation error. Our model has only 10 samples and it's very prone to overfitting, so tunning the regularization parameter is very important in this case. Minimizing the 5-fold cross validation error gives us reasonable results despite the fact that training set is very small. Minimizing the training error doesn't seem to be a good approach, because the test set error and  standard deviation of error are very big. Using only one validation set gives us better results but still not such good as using cross validation method.
+
+
+The results of average test error and standard deviation of the errors for 100 sample set-up are presented below:
+
+\begin{enumerate}
+\item By minimizing the training error
+\begin{itemize}
+\item Test set error: $1.1202$
+\item Standard deviation of error: $0.0831$
+\end{itemize}
+\item By minimizing the validation error (80\% / 20 \% split)
+\begin{itemize}
+\item Test set error: $ 1.1529$
+\item Standard deviation of error: $ 0.1283$
+\end{itemize}
+\item By minimizing the 5-fold cross validation error
+\begin{itemize}
+\item Test set error: $1.1208$
+\item Standard deviation of error: $0.0848$
+\end{itemize}
+\end{enumerate}
+First of all, the results are much better than for 10 sample set-up, but is is because we increase training set. Secondly,  differences between results for each method are very small. It's because, we have a big enough train set and regularization isn't really necessary. The model isn't prone to overfitting. 
+
+\section*{Part 2}
+\subsection*{1}
+
 \end{document}
