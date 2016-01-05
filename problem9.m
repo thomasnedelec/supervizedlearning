@@ -39,7 +39,7 @@ for i=1:nbValueSigma
             validationX = xSetsValidation(:,:,fold);
             validationY = ySetsValidation(:,fold);
                 
-            alpha=kridgereg(K,vectorGamma(1,j),smallerTrainY,k,fold);
+            alpha=kridgereg(K,vectorGamma(1,j),smallerTrainY,nTrainPoints,k,fold);
             %mseValidationAverage=mseValidationAverage+dualcost(K,alpha,validationY,k,fold);
         end;
     end
