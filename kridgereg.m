@@ -1,5 +1,4 @@
-function alpha = kridgereg(K,gamma,trainY,k,nCrossValidation)
-[nTrainPoints,d]=size(trainY);
+function alpha = kridgereg(K,gamma,trainY,nTrainPoints, k,nCrossValidation)
 KfirstPart=K(1:nCrossValidation * nTrainPoints,1:nCrossValidation * nTrainPoints);
 KsecondPart=K((nCrossValidation+1 * nTrainPoints) + 1:nTrainPoints, 1:nCrossValidation * nTrainPoints);
 KthirdPart=K(1:nCrossValidation * nTrainPoints,(nCrossValidation+1 * nTrainPoints) + 1:nTrainPoints);
