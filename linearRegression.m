@@ -1,4 +1,4 @@
-function MSE = linearRegression (trainX, testX, trainY, testY)
+function [MSEtrain, MSEtest] = linearRegression (trainX, testX, trainY, testY)
 
 toPlot = 0;
 
@@ -19,5 +19,6 @@ if(toPlot)
 end
 
 %MSETrain = computeMSE(wTrained,trainX,trainY);
-MSE = computeMSE(wTrained,testX,testY);
+MSEtest = computeMSE(wTrained,testX,testY);
+MSEtrain = computeMSE(wTrained,trainX,trainY);
         

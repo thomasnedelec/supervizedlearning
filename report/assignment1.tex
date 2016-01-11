@@ -235,6 +235,58 @@ The results of average test error and standard deviation of the errors for 100 s
 \end{enumerate}
 First of all, the results are much better than for 10 sample set-up, but is is because we increase training set. Secondly,  differences between results for each method are very small. It's because, we have a big enough train set and regularization isn't really necessary. The model isn't prone to overfitting. 
 
+\section{Kernel Ridge Regression}
+In this exercise we will perform kernel ridge regression on the Boston data set with the Gaussian kernel, which is defined as:
+\begin{equation}
+K(x_i,x_j) = exp(-\frac{|| x_i - x_j||^2}{2 \sigma^2})
+\end{equation}
+
+We created a function \textit{kridgereg.m} to perform kernel ridge regression using equation $\alpha^* = (K + \gamma l I_l)^{-1}y$. We don't explicitly use a matrix inverse instead use the matrix left division operator. According to the Matlab documentation, \textit{mldivide} is a more efficient way to solve a linear equation $Ax = b$. If the solution does not exist or if it is not unique, the  \textit{mldivide} operator issues a warning.
+
+Then, we created a function called \textit{dualcost.m} to calculate the Mean Squared Error (MSE) using equation:
+\begin{equation}
+mse = \frac{1}{l}(K_{test} \alpha - y)'(K_{test} \alpha - y)
+\end{equation}
+
+We perform kernel ridge regression on the training set using five-fold cross-validation with different values of $\gamma$ and $\sigma$. Figure \ref{fig:ex910} shows the cross-validation error as a function of $\gamma$ and $\sigma$. 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ex910_1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ex910_2}
+    \end{subfigure}
+    \caption{Cross-validation error as a function of $\gamma$ and $\sigma$.}
+    \label{fig:ex910}
+\end{figure}
+The best results are for values $\gamma = 2^{-31}$ and $\sigma = 2^{12}$. The MSE on the training data $= 8.8392$ and on the test set $= 13.8215$.
+
+Then, we repeat those steps over 20 random splits of data. Our results for exercise 9 and 10 are summarized in the table:
+\begin{center}
+\begin{tabular}{|  l c r|}
+  \hline
+  \textbf{Method} & \textbf{MSE train} & \textbf{MSE test} \\
+  Naive Regression & 84.5706 $ \pm $ 3.7489 & 84.3933 $ \pm $ 7.3810\\
+ Linear Regression (attribute 1) & 71.9206 $ \pm $ 3.7157& 71.7623$ \pm $ 7.2524\\
+  Linear Regression (attribute 2) & 73.4863 $ \pm $ 4.2998& 73.7122$ \pm $ 8.4777\\
+ Linear Regression (attribute 3) & 64.8467 $ \pm $ 4.6972& 64.7529$ \pm $ 9.1959\\
+ Linear Regression (attribute 4) & 81.3032 $ \pm $ 3.2466& 83.5478$ \pm $ 6.3118 \\
+ Linear Regression (attribute 5) & 69.1346 $ \pm $ 3.6979& 69.0250$ \pm $ 7.8448\\
+ Linear Regression (attribute 6) & 43.0045 $ \pm $ 4.6585& 45.4416$ \pm $ 9.3804\\
+ Linear Regression (attribute 7) & 72.6169 $ \pm $ 4.3741& 72.4109$ \pm $ 8.5975\\
+ Linear Regression (attribute 8) & 79.1138 $ \pm $ 4.3852& 79.6780$ \pm $ 8.5893\\
+ Linear Regression (attribute 9) & 72.4303 $ \pm $ 4.2039& 71.9495$ \pm $ 8.2573\\
+ Linear Regression (attribute 10) & 66.3728 $ \pm $ 4.5274& 65.3491$ \pm $ 8.9139\\
+ Linear Regression (attribute 11) & 63.3372 $ \pm $ 3.9821& 61.7821$ \pm $ 7.9450\\
+ Linear Regression (attribute 12) & 75.1591 $ \pm $ 3.8102& 75.1225$ \pm $ 7.5406\\
+  Linear Regression (attribute 13) & 38.2716 $ \pm $ 2.1729& 39.1051$ \pm $ 4.2303\\
+  Linear Regression (all attributes) & 23.1232 $ \pm $ 2.9711& 27.8889$ \pm $ 6.2950\\
+ Kernel Ridge Regression  & 7.9308$ \pm $1.3363 & 13.7928$ \pm$ 2.4398\\
+  \hline
+\end{tabular}
+\end{center}
+
 \section*{Part 2}
 \subsection*{1}
 

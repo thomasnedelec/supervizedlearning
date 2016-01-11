@@ -2,6 +2,7 @@ clear all;
 clc;
 close all;
 
+toPlot = 0;
 vectorGamma = 2.^(-40:-26);
 vectorSigma = 2.^(7:0.5:13)
 
@@ -56,7 +57,7 @@ for step = 1 : Iter
         end
     end
     MSEerror = MSEerror ./ k;
-
+   
     [~, index] = min(MSEerror(:));
     [gammaIndex, sigmaIndex] = ind2sub(size(MSEerror), index);
 
@@ -67,6 +68,13 @@ for step = 1 : Iter
 
     Ktest = KAll(testInd, trainInd);
     testError(1,step) = dualcost(Ktest,alpha, testY);
+    if (toPlot)
+        mesh(log(vectorSigma), log(vectorGamma), MSEerror);
+        zlim([0 50])
+        ylabel('log(gamma)');
+        xlabel('log(sigma)');
+        zlabel('MSE');
+    end
 end
 
 meanTrainError = mean(trainError)
