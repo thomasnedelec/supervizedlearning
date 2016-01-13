@@ -113,8 +113,8 @@ We consider $u \in \mathbb{R}^{d}$:
 Thus $\gamma l Id +X^{T}X$ is definite positve. 
 
 \section{Effect of the regularisation parameter}
-
-First, the graph \ref{fig:ex4_100} shows that if gamma is too high, the training error and test error increase dramatically. It is intuitive because when gamma is high the algorithm is far more likely to minimize $||w||$  rather than the training error.
+In this exercise we perform ridge regression on the data sets with the regularisation parameter ranging from $10^{-6}$ up to $10^3$.
+First, the graph \ref{fig:ex4_100} shows the training error and test error in function of gamma for 100 training samples. If gamma is too high, the training error and test error increase dramatically. It is intuitive because when gamma is high the algorithm is far more likely to minimize $||w||$  rather than the training error.
 
  \begin{figure}[h]
 \center
@@ -133,14 +133,13 @@ First, the graph \ref{fig:ex4_100} shows that if gamma is too high, the training
 We have an optimal point corresponding to inflection point of the curve in order to select $\gamma$. Nevertheless, the training set error is not a sufficiently good guidance to select the regularization parameter because the charts are quite different. 
 
 However, when we average the training error on 200 runs, we can observe that now the test error and the training error are now almost identical.
-
 A way to select the optimal $\gamma$ would be to plot the error on the training set averaged on a certain number of runs of the algorithm and select the optimal $\gamma$ on this curve. 
 
-
+Figure \ref{fig:ex4_10} shows the training error and test error in function of gamma for 10 training samples. 
  \begin{figure}[h]
 \center
  \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{4_100}
+        \includegraphics[width=\textwidth]{4_10}
         \caption{One run.}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
@@ -150,25 +149,35 @@ A way to select the optimal $\gamma$ would be to plot the error on the training 
     \caption{Evaluation of the training error and test error in function of gamma for 10 training samples.}
     \label{fig:ex4_10}
 \end{figure}
+It looks different than for 100 training samples. Regularization prevented model from overfitting. The test error decreased with increasing regularization parameter until it reached the minimal value for $\gamma = 10^{-1}$. 
 
-Figure \ref{fig:ex4_10} shows ..............
+Regularization prevents algorithm to overfit to data set. However, it is difficult to choose the optimal value of regularization parameter $\gamma$ by minimizing the training error, because it's almost always have the minimum error for $\gamma = 0$. We don't have access to the test set, so we can only use information about error on training set. In our opinion, we can find optimal value of $\gamma$ by looking the biggest value of $\gamma$, which doesn't dramatically increase training error.
 
+This exercise also shows that it is easier to overfit model for smaller data set than for bigger one and the regularization becomes less important for big data sets.
 
 \section{Tuning the regularization parameter using a validation set}
+The goal of this exercise is to use a validation set to tune the regularization parameter for training set with 10 and 100 samples. Figure \ref{fig:ex5} shows the result error on training, validation and test sets for both data sets.
  \begin{figure}[h]
 \center
  \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{5_100}
-        \caption{XXX}
+        \caption{100 sample set}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{5_10}
-        \caption{XXX}
+        \caption{10 sample set}
     \end{subfigure}
-    \caption{XXXX.}
+    \caption{Average MSE in function of gamma .}
     \label{fig:ex5}
 \end{figure}
 
+For 100 sample data set, the averaged validation error is almost identical as averaged test error, so it is a good approximation of test set. 
+
+The averaged $\gamma$ for 200 experiments are : $\gamma^{(100)} = 0.0417 $ and  $\gamma^{(10)} = 50.1787$. The averaged  $\gamma^{(10)}$ is much bigger than  $\gamma^{(100)}$. It is because the size of training set is very small and it's very prone to overfitting. Notice that we the training set has only 8 samples and the dimension is 10, so we have less data than dimensions. The high regularization parameter prevent overfitting.
+
+We performed RR on the full training set with 100 samples selecting the regularization parameter that gives rise to the smallest validation set error.Training error and validation error are equal to $0.2027$ and $3.2162$ respectively for 10 sample set and   $0.8513$ and $1.1106$  for 100 sample set. It's obvious that for bigger training set we reached better results.
+
+It is better to tune regularization parameter on validation set, which is independent from training set.
 
 \section{Tuning the regularization parameter using cross validation}
 We use 5-fold cross validation to tune the regularization parameter. Figure \ref{fig:ex6} shows cross-validation score on top of the training and test set error for different values $\gamma = \{10^{-6}, 10^{-5}, \dots, 10^3 \}$ of the regularization parameter.
@@ -235,6 +244,17 @@ The results of average test error and standard deviation of the errors for 100 s
 \end{enumerate}
 First of all, the results are much better than for 10 sample set-up, but is is because we increase training set. Secondly,  differences between results for each method are very small. It's because, we have a big enough train set and regularization isn't really necessary. The model isn't prone to overfitting. 
 
+\section{Load the data}
+We loaded the boston data set into Matlab.
+\section{Baseline versus full linear regression.}
+In this exercise we try a baseline method works for a problem instead of use all of our attributes for prediction. Firstly, we implemented Naive Regression, which predict with the mean y-value on the training set. The averaged training and test errors (after 20 runs) are equal to $ 84.5706$ and $84.3933$ respectively. Then Linear Regression with single attributes was implemented. For each of the thirteen attributes, we performed a linear regression using only the single attribute but incorporating a bias term. Results are shown in figure \ref{fig:res}. 
+
+In general, results are better than for Naive Regression, but they depends on which attribute we selected. It means that some attributes are more important (have more information that we can use to distinguish classes) that others. For example, Linear Regression with 13th attribute has error on test set: $39.1051$ in contrast to with 4th attribute: $83.5478$. 
+
+Linear Regression using all attributes outperforms any of the individual regressors (MSE on test set: $27.8889$.
+
+
+
 \section{Kernel Ridge Regression}
 In this exercise we will perform kernel ridge regression on the Boston data set with the Gaussian kernel, which is defined as:
 \begin{equation}
@@ -285,6 +305,7 @@ Then, we repeat those steps over 20 random splits of data. Our results for exerc
  Kernel Ridge Regression  & 7.9308$ \pm $1.3363 & 13.7928$ \pm$ 2.4398\\
   \hline
 \end{tabular}
+ \label{fig:res}
 \end{center}
 
 \section*{Part 2}
