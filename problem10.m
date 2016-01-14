@@ -24,7 +24,7 @@ for n=10:nbdimensions+9
         Y=X(:,1);
         %generalizationError=perceptron(X,Y,m,n); 
         %generalizationError=NNeigh(X,Y,m,n);
-        %generalizationError=leastSquare(X,Y,m,n);
+        generalizationError=leastSquare(X,Y,m,n);
         generalizationError=winnow(X,Y,m,n);
         m=m+1;
     end
@@ -69,7 +69,7 @@ function generalizationError=perceptron(X,Y,m,n)
     generalizationError=generalizationError/(nbDataSets*m);          
 
 function generalizationError=leastSquare(X,Y,m,n)
-    weight = X\Y;
+    weight = pinv(X) * Y;
     nbDataSets=10;
     generalizationError=0;
     for k=1:nbDataSets
@@ -94,7 +94,7 @@ function generalizationError=leastSquare(X,Y,m,n)
 
     
 function generalizationError=NNeigh(X,Y,m,n)
-    nbDataSets=5;
+    nbDataSets=10;
     generalizationError=0;
     for k=1:nbDataSets
         p=rand(1,m);
