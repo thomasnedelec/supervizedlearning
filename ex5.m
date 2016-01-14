@@ -11,11 +11,12 @@ MSEValidation=zeros(2,nbValueGamma);
 averageTestError = zeros(1,nbValueGamma);
 averageTrainError = zeros(1,nbValueGamma);
 averageValidationError=zeros(1,nbValueGamma);
-dimension = 5;
+dimension = 1;
 wTrained=zeros(dimension,nbValueGamma);
 nTableTrainPoints=[10,100];
 resultsMatrix=zeros(2);
 indexaverage=zeros(1,2);
+gammaAvg = zeros(1,2);
 for j=1:2
     for seed = 1:nLoops
         gamma=10^-6;
@@ -38,8 +39,6 @@ for j=1:2
             testX = X(nTableTrainPoints(1,j)+1:nData,:);
             testY = Y(nTableTrainPoints(1,j)+1:nData,:);
 
-            %implementation of cross-validation
-        
             %separation in a smaller training set and a development set
         
             percentage=0.8;
@@ -65,14 +64,21 @@ for j=1:2
             title('Evolution of the error on the development set in function of gamma');
         end;
         [minimum,index]=min(MSEValidation(j,:));
-        indexaverage(1,j)=((i-1)*indexaverage(1,j)+index)./i;
-        resultsMatrix(1,j)=minimum;
+        
+        %Perform RR on full training set
+        gammaMin = vectorGamma(1,index);
+        wTrainedFull =(transpose(trainX)*trainX+gammaMin*percentage*nTrainPoints*eye(dimension))\(transpose(trainX)*trainY);
+    
+        gammaAvg(1,j) = gammaAvg(1,j) + vectorGamma(1,index);
+       % indexaverage(1,j)=((i-1)*indexaverage(1,j)+index)./i;
+        resultsMatrix(1,j)= computeMSE(wTrainedFull,trainX,trainY);
         resultsMatrix(2,j) = computeMSE(wTrained(:,index),testX,testY);
      end;
 end;
-indexaverage(1,1)=10^(-6)*10^indexaverage(1,1);
-indexaverage(1,2)=10^(-6)*10^indexaverage(1,2);
-indexaverage
+gammaAvg = gammaAvg ./ nLoops;
+% indexaverage(1,1)=10^(-6)*10^indexaverage(1,1);
+% indexaverage(1,2)=10^(-6)*10^indexaverage(1,2);
+% indexaverage
 resultsMatrix
 MSEValidation;
 
