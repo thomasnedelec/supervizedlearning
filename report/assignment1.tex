@@ -336,16 +336,24 @@ To learn also the bias, we use the algorithm presented in different articles:
 \\$R=max\{||x_{i}||, 1 \leq i \leq l\}$
  \\While mistakes are made in the for loop repeat:
  \For{$iter = 1 \dots l$}
-		\If {$y_{i}(w_{k}^{T}x_{i}+b_{k}  \le 0$} 
-   		     \State $w_{k+1}=w_{k}+\eta*y_{i}x_{i}$
-		     \State $b_{k+1}=b_{k}+\eta*y_{i}R^{2}$
+		\If {$y_{i}(w_{k}^{T}x_{i}+b_{k})  \le 0$} 
+   		     \State $w_{k+1}=w_{k}+y_{i}x_{i}$
+		     \State $b_{k+1}=b_{k}+y_{i}$
 		     \State k=k+1
   		 \EndIf
 	 \EndFor
  \EndFor
- \State\Return{ $w_d$}
+ \Return{ $w_d$}
 \end{algorithmic}
 \end{algorithm}
+
+According to us, this algorithm should increase of decrease the number of error depending on the dataset.
+\\ Indeed, if the dataset if linearly separable with b=0, it should be better to start with directly b=0 and does not tune a bias. 
+\\However, in the case where the data are translated from 0, introducing a bias can reduce the number of mistakes. 
+\\That is why we think that it should depend on the dataset. 
+
+\subsection{Kernel modification}
+
 
 
 \end{document}
