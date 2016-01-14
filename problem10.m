@@ -4,13 +4,13 @@ clear all;
 clc;
 close all;
 
-nbdimensions=80;
+nbdimensions=30;
 
 indexSamples=zeros(1,nbdimensions);
 for n=10:nbdimensions+9
     m=5;
     generalizationError=1;
-    while generalizationError > 0.1 && m < 500
+    while generalizationError > 0.1 && m < 50
         p=rand(1,m);
         X=zeros(m,n);
         for j=1:m
@@ -24,7 +24,8 @@ for n=10:nbdimensions+9
         Y=X(:,1);
         %generalizationError=perceptron(X,Y,m,n); 
         %generalizationError=NNeigh(X,Y,m,n);
-        generalizationError=leastSquare(X,Y,m,n);
+        %generalizationError=leastSquare(X,Y,m,n);
+        generalizationError=winnow(X,Y,m,n);
         m=m+1;
     end
     indexSamples(1,n-9)=m;
@@ -116,6 +117,54 @@ function generalizationError=NNeigh(X,Y,m,n)
                  end
             end
             if (Ynew(j)~=Y(indexminDistance))
+                generalizationError=generalizationError+1;
+            end
+        end
+    end
+    generalizationError=generalizationError/(nbDataSets*m);
+    
+function generalizationError=winnow(X,Y,m,n)
+    for i=1:m
+        for j=1:n
+            if X(i,j)==-1
+                X(i,j)=0;
+            end
+        end
+    end
+    Y=X(:,1);
+    weight=ones(1,n);
+    niter=2;
+    for k=1:niter
+        for i=1:m
+            if (weight*transpose(X(i,:))>n/2)&&(Y(i)==0)
+                for j=1:n
+                    if(X(i,j)==1)
+                        weight(j)=weight(j)/2;
+                    end
+                end
+            if (weight*transpose(X(i,:))<n/2)&&(Y(i)==1)
+                 for j=1:n
+                    if(X(i,j)==1)
+                        weight(j)=weight(j)*2;
+                    end
+                 end
+            end
+            end
+        end
+    end
+    nbDataSets=10;
+    generalizationError=0;
+    for k=1:nbDataSets
+        p=rand(1,m);
+        Xnew=zeros(m,n);
+        for j=1:m
+            for l=1:n
+                Xnew(j,l)=binornd(1,p(1,j));
+            end
+        end
+        Ynew=Xnew(:,1);
+        for i=1:m
+            if (weight*transpose(Xnew(i,:))>n/2)&&(Ynew(i)==0)||(weight*transpose(Xnew(i,:))<n/2)&&(Ynew(i)==1)
                 generalizationError=generalizationError+1;
             end
         end

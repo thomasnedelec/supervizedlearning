@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Exercise 1: Least Square Regression: effect of the training set size}{}% 1
+\BOOKMARK [1][-]{section.2}{Exercise 2: Least Square Regression: effect of dimensionality}{}% 2
+\BOOKMARK [1][-]{section.3}{Exercise 3: Ridge regression}{}% 3
+\BOOKMARK [1][-]{section.4}{Effect of the regularisation parameter}{}% 4
+\BOOKMARK [1][-]{section.5}{Tuning the regularization parameter using a validation set}{}% 5
+\BOOKMARK [1][-]{section.6}{Tuning the regularization parameter using cross validation}{}% 6
+\BOOKMARK [1][-]{section.7}{Comparison of \040tuning methods}{}% 7
+\BOOKMARK [1][-]{section.8}{Load the data}{}% 8
+\BOOKMARK [1][-]{section.9}{Baseline versus full linear regression.}{}% 9
+\BOOKMARK [1][-]{section.10}{Kernel Ridge Regression}{}% 10
+\BOOKMARK [1][-]{section.11}{Part 2}{}% 11
+\BOOKMARK [2][-]{subsection.11.1}{Simulating 1-Nearest Neighbor classifier with Linear Classifier}{section.11}% 12
+\BOOKMARK [2][-]{subsection.11.2}{Using a perceptron to learn a linear classifier with a bias}{section.11}% 13
+\BOOKMARK [2][-]{subsection.11.3}{Kernel modification}{section.11}% 14
