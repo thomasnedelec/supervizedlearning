@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.1)  14 JAN 2016 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.1)  15 JAN 2016 00:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,7 +464,20 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip59
 \backup@length=\skip60
 )
-(./assignment1.aux)
+(./assignment1.aux
+
+LaTeX Warning: Label `fig:lsr' multiply defined.
+
+
+LaTeX Warning: Label `fig:lsr' multiply defined.
+
+
+LaTeX Warning: Label `fig:lsr' multiply defined.
+
+
+LaTeX Warning: Label `fig:lsr' multiply defined.
+
+)
 \openout1 = `assignment1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -486,6 +499,7 @@ LaTeX Font Info:    Try loading font information for OT1+lmr on input line 42.
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box39
+
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count143
@@ -616,25 +630,25 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 46.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<10points.png, id=61, 444.66125pt x 359.3425pt>
+<10points.png, id=65, 444.66125pt x 359.3425pt>
 File: 10points.png Graphic file (type png)
  <use 10points.png>
 Package pdftex.def Info: 10points.png used on input line 53.
 (pdftex.def)             Requested size: 129.00269pt x 104.25052pt.
 
-<100points.png, id=63, 442.65375pt x 358.33875pt>
+<100points.png, id=67, 442.65375pt x 358.33875pt>
 File: 100points.png Graphic file (type png)
  <use 100points.png>
 Package pdftex.def Info: 100points.png used on input line 53.
 (pdftex.def)             Requested size: 129.00269pt x 104.42955pt.
 
-<500points.png, id=64, 445.665pt x 361.35pt>
+<500points.png, id=68, 445.665pt x 361.35pt>
 File: 500points.png Graphic file (type png)
  <use 500points.png>
 Package pdftex.def Info: 500points.png used on input line 53.
 (pdftex.def)             Requested size: 129.00269pt x 104.59583pt.
 
-<resultsMatrix.png, id=65, 275.52937pt x 172.39406pt>
+<resultsMatrix.png, id=69, 275.52937pt x 172.39406pt>
 File: resultsMatrix.png Graphic file (type png)
  <use resultsMatrix.png>
 Package pdftex.def Info: resultsMatrix.png used on input line 61.
@@ -644,44 +658,44 @@ Package pdftex.def Info: resultsMatrix.png used on input line 61.
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./10poi
 nts.png> <./100points.png> <./500points.png> <./resultsMatrix.png>]
-<resultsMatrix2.png, id=85, 275.52937pt x 172.39406pt>
+<resultsMatrix2.png, id=90, 275.52937pt x 172.39406pt>
 File: resultsMatrix2.png Graphic file (type png)
 
 <use resultsMatrix2.png>
 Package pdftex.def Info: resultsMatrix2.png used on input line 78.
 (pdftex.def)             Requested size: 171.99922pt x 107.61975pt.
  [2 <./resultsMatrix2.png>]
-<4_100.png, id=96, 420.06938pt x 315.42844pt>
+<4_100.png, id=101, 420.06938pt x 315.42844pt>
 File: 4_100.png Graphic file (type png)
  <use 4_100.png>
 Package pdftex.def Info: 4_100.png used on input line 124.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
 
-<4_100_avg.png, id=97, 420.06938pt x 315.42844pt>
+<4_100_avg.png, id=102, 420.06938pt x 315.42844pt>
 File: 4_100_avg.png Graphic file (type png)
  <use 4_100_avg.png>
 Package pdftex.def Info: 4_100_avg.png used on input line 128.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
- [3 <./4_100.png> <./4_100_avg.png>] <4_10.png, id=108, 420.06938pt x 315.42844
+ [3 <./4_100.png> <./4_100_avg.png>] <4_10.png, id=113, 420.06938pt x 315.42844
 pt>
 File: 4_10.png Graphic file (type png)
 
 <use 4_10.png>
 Package pdftex.def Info: 4_10.png used on input line 144.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
- <4_10_avg.png, id=109, 420.06938pt x 315.42844pt>
+ <4_10_avg.png, id=114, 420.06938pt x 315.42844pt>
 File: 4_10_avg.png Graphic file (type png)
 
 <use 4_10_avg.png>
 Package pdftex.def Info: 4_10_avg.png used on input line 148.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
- <5_100.png, id=111, 420.06938pt x 315.42844pt>
+ <5_100.png, id=116, 420.06938pt x 315.42844pt>
 File: 5_100.png Graphic file (type png)
 
 <use 5_100.png>
 Package pdftex.def Info: 5_100.png used on input line 165.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
- <5_10.png, id=112, 420.06938pt x 315.42844pt>
+ <5_10.png, id=117, 420.06938pt x 315.42844pt>
 File: 5_10.png Graphic file (type png)
  <use 5_10.png>
 Package pdftex.def Info: 5_10.png used on input line 169.
@@ -691,16 +705,16 @@ Package pdftex.def Info: 5_10.png used on input line 169.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4 <./4_10.png> <./4_10_avg.png>]
-<ex6_10.png, id=120, 420.06938pt x 315.42844pt>
+<ex6_10.png, id=125, 420.06938pt x 315.42844pt>
 File: ex6_10.png Graphic file (type png)
  <use ex6_10.png>
-Package pdftex.def Info: ex6_10.png used on input line 190.
+Package pdftex.def Info: ex6_10.png used on input line 192.
 (pdftex.def)             Requested size: 129.00269pt x 96.86732pt.
 
-<ex6_100.png, id=121, 420.06938pt x 315.42844pt>
+<ex6_100.png, id=126, 420.06938pt x 315.42844pt>
 File: ex6_100.png Graphic file (type png)
  <use ex6_100.png>
-Package pdftex.def Info: ex6_100.png used on input line 194.
+Package pdftex.def Info: ex6_100.png used on input line 196.
 (pdftex.def)             Requested size: 129.00269pt x 96.86732pt.
 
 
@@ -708,56 +722,56 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <./5_100.png> <./5_10.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 206.
+(Font)              <12> on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 206.
+(Font)              <8> on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 206.
+(Font)              <6> on input line 208.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 206.
+(hyperref)                removing `math shift' on input line 208.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 206.
+(hyperref)                removing `\gamma' on input line 208.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 206.
+(hyperref)                removing `math shift' on input line 208.
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 212.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 214.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 212.
- [6 <./ex6_10.png> <./ex6_100.png>] [7] <ex910_1.png, id=146, 420.06938pt x 315
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 214.
+ [6 <./ex6_10.png> <./ex6_100.png>] [7] <ex910_1.png, id=151, 420.06938pt x 315
 .42844pt>
 File: ex910_1.png Graphic file (type png)
 
 <use ex910_1.png>
-Package pdftex.def Info: ex910_1.png used on input line 281.
+Package pdftex.def Info: ex910_1.png used on input line 283.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
- <ex910_2.png, id=147, 420.06938pt x 315.42844pt>
+ <ex910_2.png, id=152, 420.06938pt x 315.42844pt>
 File: ex910_2.png Graphic file (type png)
 
 <use ex910_2.png>
-Package pdftex.def Info: ex910_2.png used on input line 284.
+Package pdftex.def Info: ex910_2.png used on input line 286.
 (pdftex.def)             Requested size: 193.50076pt x 145.29617pt.
 
-./assignment1.tex:317: Undefined control sequence.
+./assignment1.tex:319: Undefined control sequence.
 <argument> Simulating \texitt 
                               {1-Nearest Neighbor classifier} with Linear Cl...
-l.317 ...ghbor classifier} with Linear Classifier}
+l.319 ...ghbor classifier} with Linear Classifier}
                                                   
 ? r
 OK, entering \nonstopmode...
-./assignment1.tex:317: Undefined control sequence.
+./assignment1.tex:319: Undefined control sequence.
 <argument> ...label \ttl@a \fi Simulating \texitt 
                                                   {1-Nearest Neighbor classi...
-l.317 ...ghbor classifier} with Linear Classifier}
+l.319 ...ghbor classifier} with Linear Classifier}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -765,10 +779,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./assignment1.tex:317: Undefined control sequence.
+./assignment1.tex:319: Undefined control sequence.
 <argument> ...label \ttl@a \fi Simulating \texitt 
                                                   {1-Nearest Neighbor classi...
-l.317 ...ghbor classifier} with Linear Classifier}
+l.319 ...ghbor classifier} with Linear Classifier}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -778,45 +792,121 @@ and I'll forget about whatever was undefined.
 
 [8 <./ex910_1.png> <./ex910_2.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 331.
+put line 333.
 
 
-./assignment1.tex:332: LaTeX Error: There's no line here to end.
+./assignment1.tex:334: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.332 \\I
+l.334 \\I
          nput $D: training set, maxIter, learningRate$
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./assignment1.tex:345: Missing number, treated as zero.
+./assignment1.tex:347: Missing number, treated as zero.
 <to be read again> 
                    \ALG@b@2@EndFor@0 
-l.345  \EndFor
+l.347  \EndFor
               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
+./assignment1.tex:366: Missing } inserted.
+<inserted text> 
+                }
+l.366 \end{equation*}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./assignment1.tex:366: Missing } inserted.
+<inserted text> 
+                }
+l.366 \end{equation*}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./assignment1.tex:370: LaTeX Error: \begin{equation} on input line 368 ended by
+ \end{equation*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.370 \end{equation*}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[9] <perceptron.png, id=165, 455.7025pt x 356.33125pt>
+File: perceptron.png Graphic file (type png)
+ <use perceptron.png>
+Package pdftex.def Info: perceptron.png used on input line 385.
+(pdftex.def)             Requested size: 215.0023pt x 168.12273pt.
+
+<linear.jpg, id=166, 451.6875pt x 357.335pt>
+File: linear.jpg Graphic file (type jpg)
+ <use linear.jpg>
+Package pdftex.def Info: linear.jpg used on input line 394.
+(pdftex.def)             Requested size: 215.0023pt x 170.09575pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./perceptron.png>] <winnow.png, id=173, 446.66875pt x 352.31625pt>
+File: winnow.png Graphic file (type png)
+
+<use winnow.png>
+Package pdftex.def Info: winnow.png used on input line 405.
+(pdftex.def)             Requested size: 215.0023pt x 169.58833pt.
+
+
+./assignment1.tex:416: LaTeX Error: File `NN' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \includegraphics[width=0.5\textwidth]{NN}
+                                               
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 428.
+[11 <./linear.jpg> <./winnow.png>] [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 428.
  (./assignment1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 428.
 Package rerunfilecheck Info: File `assignment1.out' has not changed.
-(rerunfilecheck)             Checksum: 7453242767AEB50B4C46E0E5908D5199;1110.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 359.
+(rerunfilecheck)             Checksum: 69296C1494F0BA5C9D3949011006CD70;1177.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
  ) 
 Here is how much of TeX's memory you used:
- 10348 strings out of 493089
- 153950 string characters out of 6134843
- 253965 words of memory out of 5000000
- 13607 multiletter control sequences out of 15000+600000
+ 10386 strings out of 493089
+ 154366 string characters out of 6134843
+ 253991 words of memory out of 5000000
+ 13620 multiletter control sequences out of 15000+600000
  56203 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,13n,39p,676b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -837,10 +927,10 @@ usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on assignment1.pdf (9 pages, 326199 bytes).
+Output written on assignment1.pdf (12 pages, 363463 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
