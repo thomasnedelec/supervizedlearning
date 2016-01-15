@@ -1,5 +1,4 @@
 function problem10;
-
 clear all;
 clc;
 close all;
@@ -10,7 +9,7 @@ indexSamples=zeros(1,nbdimensions);
 for n=10:nbdimensions+9
     m=5;
     generalizationError=1;
-    while generalizationError > 0.1 && m < 50
+    while generalizationError > 0.1 && m < 80
         p=rand(1,m);
         X=zeros(m,n);
         for j=1:m
@@ -23,8 +22,8 @@ for n=10:nbdimensions+9
         end
         Y=X(:,1);
         %generalizationError=perceptron(X,Y,m,n); 
-        %generalizationError=NNeigh(X,Y,m,n);
-        generalizationError=leastSquare(X,Y,m,n);
+        %generalizationError=1NearestNeighbours(X,Y,m,n);
+        %generalizationError=leastSquare(X,Y,m,n);
         generalizationError=winnow(X,Y,m,n);
         m=m+1;
     end
@@ -93,7 +92,7 @@ function generalizationError=leastSquare(X,Y,m,n)
     generalizationError=generalizationError/(nbDataSets*m);          
 
     
-function generalizationError=NNeigh(X,Y,m,n)
+function generalizationError=1NearestNeighbours(X,Y,m,n)
     nbDataSets=10;
     generalizationError=0;
     for k=1:nbDataSets
