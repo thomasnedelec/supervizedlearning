@@ -153,7 +153,7 @@ Figure \ref{fig:ex4_10} shows the training error and test error in function of g
 \end{figure}
 It looks different than for 100 training samples. Regularization prevented model from overfitting. The test error decreased with increasing regularization parameter until it reached the minimal value for $\gamma = 10^{-1}$. Basically trying to train a regression in dimension 10 with 10 points does not mean a lot of things. However, we can notice some interesting things. 
 
-Regularization prevents algorithm to overfit the data set. In the case of 10 points, it is difficult to choose the optimal value of regularization parameter $\gamma$. Minimizing according to gamma would lead in this case to not take into account the data and choose w=0. T
+Regularization prevents algorithm to overfit the data set. In the case of 10 points, it is difficult to choose the optimal value of regularization parameter $\gamma$. Minimizing according to gamma would lead in this case to not take into account the data and choose w=0. 
 
 The most important thing of this part is to see that with a reasonable size of data set there exists an optimal gamma that lets to lead to a good generalization ability. 
 
@@ -177,7 +177,7 @@ For 100 sample data set, the averaged validation error is almost identical as av
 
 The averaged best $\gamma$ on the validation set for 200 experiments are : $\gamma^{(100)} = 0.0417 $ and  $\gamma^{(10)} = 50.1787$. The averaged  $\gamma^{(10)}$ is much bigger than  $\gamma^{(100)}$. It is still because with only 10 points, ridge regression just leads to not take into account the training data. Notice that the training set has only 8 samples and the dimension is 10, so we have even less points than dimensions.
 
-We performed RR on the full training set with 100 samples selecting the regularization parameter that gives rise to the smallest validation set error.Training error and validation error are equal to $0.2027$ and $3.2162$ respectively for 10 sample set and   $0.8513$ and $1.1106$  for 100 sample set. It's obvious that for bigger training set we reached better results.
+We performed RR on the full training set with 100 samples selecting the regularization parameter that gives rise to the smallest validation set error. Training error and validation error are equal to $0.2027$ and $3.2162$ respectively for 10 sample set and   $0.8513$ and $1.1106$  for 100 sample set. It's obvious that for bigger training set we reached better results.
 
 It is better to tune regularization parameter on validation set, which is independent from training set but we are losing information compare to having access to the full training set. That is why we need to introduce cross-validation. 
 
@@ -384,7 +384,7 @@ The first algorithm we implemented is perceptron.
 \center
 \includegraphics[width=0.5\textwidth]{perceptron}
 \caption{ Evolution of sample complexity according to dimension for perceptron}
-\label {fig:lsr}
+\label {fig:sparse_1}
 \end{figure} 
 
 M seems to grow linearly as a function of n with a slope close to one. It is quite good algorithm in terms of sample complexity. 
@@ -393,7 +393,7 @@ M seems to grow linearly as a function of n with a slope close to one. It is qui
 \center
 \includegraphics[width=0.5\textwidth]{linear}
 \caption{ Evolution of sample complexity according to dimension for least square algorithm}
-\label {fig:lsr}
+\label {fig:sparse_2}
 \end{figure} 
 
 Concerning least square algorithm, the relationship seems also to be linear with a lower slope. The slope is around 1/2. Thus linear regression seems to have a better sample complexity than perceptron. 
@@ -404,7 +404,7 @@ The sample complexity of winnow seems to be very good and actually is the best o
 \center
 \includegraphics[width=0.5\textwidth]{winnow}
 \caption{ Evolution of sample complexity according to dimension for winnow algorithm}
-\label {fig:lsr}
+\label {fig:sparse_3}
 \end{figure} 
 
 
@@ -415,7 +415,7 @@ N-Nearest Neighbours is a very poor algorithm in this case. Indeed, N-Nearest Ne
 \center
 \includegraphics[width=0.5\textwidth]{NN}
 \caption{ Evolution of sample complexity according to dimension for perceptron}
-\label {fig:lsr}
+\label {fig:sparse_4}
 \end{figure}
 
 Thus, if we need to classify the algorithm according to their sample complexity (from the best to the worse) in this particular case where the label is the first column of the training data we reach: 
