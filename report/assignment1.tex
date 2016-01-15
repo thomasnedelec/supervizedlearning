@@ -181,6 +181,8 @@ We performed RR on the full training set with 100 samples selecting the regulari
 
 It is better to tune regularization parameter on validation set, which is independent from training set but we are losing information compare to having access to the full training set. That is why we need to introduce cross-validation. 
 
+With changing to one-dimensional datasets, regularization parameter increased for both 10 and 100 samples. That's because 1 dimension gives less of freedom  and it is easier to overfit than for 10-dimensional dataset, so bigger $\gamma$ leads to a good generalization ability.
+
 \section{Tuning the regularization parameter using cross validation}
 We use 5-fold cross validation to tune the regularization parameter. Figure \ref{fig:ex6} shows cross-validation score on top of the training and test set error for different values $\gamma = \{10^{-6}, 10^{-5}, \dots, 10^3 \}$ of the regularization parameter.
 
@@ -353,6 +355,73 @@ According to us, this algorithm should increase of decrease the number of error 
 \\That is why we think that it should depend on the dataset. 
 
 \subsection{Kernel modification}
+
+We consider the function: $K_{c}(x,z)=c+\sum_{i=1}^{n}x_{i}z_{i}$.
+
+We assume $c \geq 0$.
+
+We consider $\phi: \mathbb{R}^{n} \rightarrow \mathbb{R}^{n+1}$ such that: 
+\begin{equation*}
+\phi(x_{1},...,{x_{n})=(x_{1},...,{x_{n},\sqrt(c))
+\end{equation*}
+and we reach: 
+\begin{equation}
+K(x,z) = \langle \phi(x) , \phi(z) \rangle \text{ in } \mathbb{R}^{n+1}
+\end{equation*}
+Thus, for $c \in \mathbb{R}^{+}$ $K_{c}$ is a positive semidefinite Kernel. 
+
+We suppose we do linear regression with $K_{c}$.
+
+\subsection{Sparse learning}
+
+We implemented the four different algorithms \textbf{perceptron, winnow, least squares and 1-nearest neighbours}.
+
+To compute an estimator of the sample complexity we generate several test data sets (30 for winnow for instance) and we average the error on this 30 data sets. While this averaged error is higher than 0.1 we continue to increase the size of the training set. This is how we manage to draw the curve of the evolution of the sample complexity according to the dimension. 
+
+The first algorithm we implemented is perceptron. 
+
+\begin{figure}[h]
+\center
+\includegraphics[width=0.5\textwidth]{perceptron}
+\caption{ Evolution of sample complexity according to dimension for perceptron}
+\label {fig:lsr}
+\end{figure} 
+
+M seems to grow linearly as a function of n with a slope close to one. It is quite good algorithm in terms of sample complexity. 
+
+\begin{figure}[h]
+\center
+\includegraphics[width=0.5\textwidth]{linear}
+\caption{ Evolution of sample complexity according to dimension for least square algorithm}
+\label {fig:lsr}
+\end{figure} 
+
+Concerning least square algorithm, the relationship seems also to be linear with a lower slope. The slope is around 1/2. Thus linear regression seems to have a better sample complexity than perceptron. 
+
+\newpage
+The sample complexity of winnow seems to be very good and actually is the best of the 4 algorithms. The relationship seems to be $m=O(log(n))$.
+\begin{figure}[h]
+\center
+\includegraphics[width=0.5\textwidth]{winnow}
+\caption{ Evolution of sample complexity according to dimension for winnow algorithm}
+\label {fig:lsr}
+\end{figure} 
+
+
+
+N-Nearest Neighbours is a very poor algorithm in this case. Indeed, N-Nearest Neighbours should use all the features with equal importance to classify whereas only the first one is necessary. We tried to draw the curve for a few points but the relationship seems to be exponential and for high points the algorithm never reaches at ecah iteration a generalisation error lower than 0.1.
+
+\begin{figure}[h]
+\center
+\includegraphics[width=0.5\textwidth]{NN}
+\caption{ Evolution of sample complexity according to dimension for perceptron}
+\label {fig:lsr}
+\end{figure}
+
+Thus, if we need to classify the algorithm according to their sample complexity (from the best to the worse) in this particular case where the label is the first column of the training data we reach: 
+\begin{center}
+$winnow algorithm \geq least square \geq perceptron \geq Nearest Neighbour$
+\end{center}
 
 
 
